@@ -13,9 +13,8 @@ class ApiController < ApplicationController
     @current_user ||= User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
   end
 
-  private
-# # Verify 
-#   def verify_authenticity_token
-      
-#   end
+  # # Verify
+  #   def verify_authenticity_token
+
+  #   end
 end

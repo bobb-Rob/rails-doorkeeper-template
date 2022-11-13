@@ -9,8 +9,8 @@ module Api
           client_app = Doorkeeper::Application.find_by(uid: params[:client_id])
           unless client_app
             return render json: {
-              error: I18n.t('doorkeeper.errors.messages.invalid_client'),
-              }, status: :unauthorized
+              error: I18n.t('doorkeeper.errors.messages.invalid_client')
+            }, status: :unauthorized
           end
 
           allowed_params = user_params.except(:client_id)
@@ -19,8 +19,8 @@ module Api
             render json: render_user(user, client_app), status: :created
           else
             render json: {
-              error: user.errors.full_messages,
-              }, status: :unprocessable_entity
+              error: user.errors.full_messages
+            }, status: :unprocessable_entity
           end
         end
 
